@@ -1,0 +1,7 @@
+node_modules/
+*.tsbuildinfo
+dist/**/*.map
+
+# Unrelated workspace projects
+iphone-incognito-vault/
+iphone-tab-rescue/

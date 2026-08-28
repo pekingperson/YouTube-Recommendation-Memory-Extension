@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Recommendation Memory for YouTube",
+  "version": "1.0.0",
+  "description": "Automatically remembers YouTube homepage recommendations from your last 20 page loads.",
+  "minimum_chrome_version": "102",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Recommendation Memory",
+    "default_popup": "popup.html",
+    "default_state": "enabled"
+  },
+  "background": {
+    "service_worker": "assets/background.js",
+    "type": "module"
+  },
+  "options_page": "history.html",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["assets/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
